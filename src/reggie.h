@@ -1,6 +1,8 @@
 #ifndef REGGIE_H
 #define REGGIE_H
 
+#include <reggie_export.h>
+
 // BNF Grammar of Regular Expressions
 //
 // Following the precedence rules given previously, a BNF grammar for Perl-style regular expressions can be
@@ -26,8 +28,7 @@
 // <range>     ::=     <char> "-" <char>
 
 
-// PERL:Search/Replace:Regular Expression:Backus Naur Form:What is
-// possible BNF for regular expression?
+// PERL: Search/Replace: Regular Expression:Backus Naur Form: What is possible BNF for regular expression?
 //
 // expression = term
 //              term | expression
@@ -107,7 +108,7 @@
 
 namespace reggie {
 
-class Pattern
+class REGGIE_EXPORT Pattern
 {
 public:
   ///
