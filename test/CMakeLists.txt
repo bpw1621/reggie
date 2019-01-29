@@ -8,6 +8,12 @@ target_link_libraries(test_runner reggie)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/3rdparty/Catch2/contrib")
 target_compile_features(test_runner PRIVATE cxx_std_20)
 
+if(MSVC)
+    target_compile_options(test_runner PRIVATE /W4 /WX)
+else()
+    target_compile_options(test_runner PRIVATE -Wall -Wextra -Wpedantic)
+endif()
+
 include(CTest)
 include(Catch)
 catch_discover_tests(test_runner)
